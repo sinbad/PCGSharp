@@ -377,6 +377,15 @@ namespace PCGSharp {
       Initialize(seed, sequence);
     }
 
+    public void GetState(out ulong state, out ulong increment) {
+      state = _state;
+      increment = _increment;
+    }
+    public void SetState(ulong state, ulong increment) {
+      _state = state;
+      _increment = increment;
+    }
+
     void Initialize(ulong seed, ulong initseq) {
       _state = 0ul;
       SetStream(initseq);
